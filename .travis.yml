@@ -7,7 +7,7 @@ branches:
   only:
     - master
 before_install:
-
+  - openssl aes-256-cbc -K $encrypted_bb5f29e74df1_key -iv $encrypted_bb5f29e74df1_iv -in terraform-infrastructure01.json.enc -out terraform-infrastructure01.json -d
   - curl https://sdk.cloud.google.com | bash > /dev/null
   - source "$HOME/google-cloud-sdk/path.bash.inc"
   - gcloud auth activate-service-account --key-file=terraform-infrastructure01.json
