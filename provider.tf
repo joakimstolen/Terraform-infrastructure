@@ -11,3 +11,5 @@ provider "google-beta" {
   project     = "terraform-infrastructure01"
   version = "~> 3.0.0-beta.1"
 }
+
+
