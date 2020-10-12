@@ -1,27 +1,29 @@
 env:
   global:
-    - GCP_PROJECT_ID=terraform-infrastructure01
-    - tf_version=0.12.19
-    - CLOUDSDK_CORE_DISABLE_PROMPTS=1
+  - GCP_PROJECT_ID=terraform-infrastructure01
+  - tf_version=0.12.19
+  - CLOUDSDK_CORE_DISABLE_PROMPTS=1
 branches:
   only:
-    - master
+  - master
 before_install:
-  - openssl aes-256-cbc -K $encrypted_98d237b7dbf4_key -iv $encrypted_98d237b7dbf4_iv -in google-key.json.enc -out google-key.json -d
-  - curl https://sdk.cloud.google.com | bash > /dev/null
-  - source "$HOME/google-cloud-sdk/path.bash.inc"
-  - gcloud auth activate-service-account --key-file=google-key.json
-  - gcloud config set project "${GCP_PROJECT_ID}"
-  - export GOOGLE_APPLICATION_CREDENTIALS=./google-key.json
-  - wget https://releases.hashicorp.com/terraform/"$tf_version"/terraform_"$tf_version"_linux_amd64.zip
-  - unzip terraform_"$tf_version"_linux_amd64.zip
-  - sudo mv terraform /usr/local/bin/
-  - rm terraform_"$tf_version"_linux_amd64.zip
+- openssl aes-256-cbc -K $encrypted_d3905b2f9984_key -iv $encrypted_d3905b2f9984_iv
+  -in terraform-infrastructure01-2cf236408f59.json.enc -out terraform-infrastructure01-2cf236408f59.json
+  -d
+- curl https://sdk.cloud.google.com | bash > /dev/null
+- source "$HOME/google-cloud-sdk/path.bash.inc"
+- gcloud auth activate-service-account --key-file=terraform-infrastructure01-2cf236408f59.json
+- gcloud config set project "${GCP_PROJECT_ID}"
+- export GOOGLE_APPLICATION_CREDENTIALS=./terraform-infrastructure01-2cf236408f59.json
+- wget https://releases.hashicorp.com/terraform/"$tf_version"/terraform_"$tf_version"_linux_amd64.zip
+- unzip terraform_"$tf_version"_linux_amd64.zip
+- sudo mv terraform /usr/local/bin/
+- rm terraform_"$tf_version"_linux_amd64.zip
 install: true
 script:
-  - |-
-    set -ex;
-    terraform init
-    terraform plan
-    terraform apply --auto-approve
-    terraform output
+- |-
+  set -ex;
+  terraform init
+  terraform plan
+  terraform apply --auto-approve
+  terraform output
