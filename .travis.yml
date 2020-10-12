@@ -1,7 +1,7 @@
 env:
   global:
   - GCP_PROJECT_ID=terraform-infrastructure01
-  - tf_version=0.12.19
+  - tf_version=0.13.3
   - CLOUDSDK_CORE_DISABLE_PROMPTS=1
 branches:
   only:
