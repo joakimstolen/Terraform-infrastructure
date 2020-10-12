@@ -1,4 +1,3 @@
-IntelliJ IDEA
 terraform {
   backend "gcs" {
     bucket = "terraform-infra-bucket01"
