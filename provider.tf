@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "example-bucket12345678"
+    bucket = "example-bucket123456"
     prefix = "terraformstate"
     credentials = "google-key.json"
   }
