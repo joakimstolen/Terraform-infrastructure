@@ -7,6 +7,10 @@ resource "google_cloud_run_service" "hello" {
     spec {
       containers {
         image = "gcr.io/cloudrun/hello"
+        env {
+          name = "LOGZ_TOKEN"
+          value = var.logz_token
+        }
       }
     }
   }
