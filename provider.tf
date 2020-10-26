@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "terraform-infra-bucket01"
+    bucket = "example-bucket123456"
     prefix = "terraformstate"
     credentials = "google-key.json"
   }
@@ -8,7 +8,7 @@ terraform {
 
 provider "google-beta" {
   credentials = file("google-key.json")
-  project     = "terraform-infrastructure01"
+  project     = "devops05-290206"
   version = "~> 3.0.0-beta.1"
 }
 
