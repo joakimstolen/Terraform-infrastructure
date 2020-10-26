@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "static-site" {
-  project = "terraform-infrastructure01"
-  name = "terraform-infra-bucket02"
+  project = "devops05-290206"
+  name = "devops05-290206"
   location = "EU"
 }
