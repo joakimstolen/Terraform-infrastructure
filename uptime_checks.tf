@@ -1,4 +1,4 @@
-provider "statuscake" {
+provider "terraform-providers/statuscake" {
   username = "joakimstoelenhotmailcom"
   apikey = "12345abcde"
 }
