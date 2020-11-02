@@ -1,6 +1,6 @@
 provider "statuscake" {
   username = "joakimstoelenhotmailcom"
-  apikey = "12345abcde"
+  //apikey = "12345abcde"
 }
 
 
